@@ -5,7 +5,7 @@ import { ShoppingCart, List } from 'phosphor-react';
 
 function Navbar() {
   return (
-    <Contaier>
+    <Container>
       <Link to="/menu">
         <List size={30} />
       </Link>
@@ -13,13 +13,13 @@ function Navbar() {
       <Link to="/cart">
         <ShoppingCart size={30} />
       </Link>
-    </Contaier>
+    </Container>
   );
 }
 
 export default Navbar;
 
-const Contaier = styled.div`
+const Container = styled.div`
   width: 100vw;
   display: flex;
   justify-content: space-between;
@@ -30,7 +30,7 @@ const Contaier = styled.div`
 
 `;
 
-const Heading = styled.h1`
+export const Heading = styled.h1`
   font-size: 28px;
   color: white;
   margin-bottom: 12px;
