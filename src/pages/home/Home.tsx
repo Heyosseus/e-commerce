@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 import headphones from '../../assets/home/mobile/image-header.jpg';
 import { Button } from '../../styles/Button';
+import AudioInfo from './AudioInfo';
 import Content from './Content';
+import Items from './Items';
 
 function Home() {
   return (
@@ -16,6 +18,8 @@ function Home() {
         <Button>see products</Button>
       </Container>
       <Content />
+      <Items />
+      <AudioInfo />
     </div>
   );
 }
@@ -39,16 +43,16 @@ const Heading = styled.h1`
   font-size: 14px;
   letter-spacing: 10px;
   text-transform: uppercase;
-  opacity: .75;
+  opacity: 0.75;
 `;
 
 const ItemName = styled.h2`
-    font-weight: 700;
-    font-size: 36px;
-    letter-spacing: 1.3px;
-    line-height: 40px;
-    margin-top: 16px;
-`
+  font-weight: 700;
+  font-size: 36px;
+  letter-spacing: 1.3px;
+  line-height: 40px;
+  margin-top: 16px;
+`;
 const Description = styled.p`
   font-weight: 500;
   font-size: 15px;
