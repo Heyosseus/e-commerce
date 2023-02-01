@@ -26,7 +26,7 @@ function Content() {
         </Card>
       </CardContainer>
       <CardContainer>
-        <Images src={earphones} style={{width: '110px', height: '99px'}}></Images>
+        <Images src={earphones} style={{width: '99px', height: '99px'}}></Images>
         <Card>
           <CardHeading>earphones</CardHeading>
           <ForShop>
@@ -40,7 +40,7 @@ function Content() {
 
 export default Content;
 
-const Container = styled.section`
+export const Container = styled.section`
   width: 100%;
   min-height: 100vh;
   padding: 24px;
@@ -53,7 +53,6 @@ const CardContainer = styled.div`
   margin-top: 12px;
 `;
 const Images = styled.img`
-  /* background-image: url(${earphones}); */
   background-size: cover;
   width: 90px;
   height: 111px;
