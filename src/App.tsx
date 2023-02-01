@@ -1,10 +1,23 @@
 import { FC } from 'react';
 import { Helmet } from 'react-helmet';
 import { GlobalStyles } from './styles/GlobalStyles';
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import { motion, useScroll, useSpring } from 'framer-motion';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/home/Home';
+import Footer from './components/Footer';
+import styled from 'styled-components';
 const App: FC = () => {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 15,
+    restDelta: 0.001,
+  });
   return (
     <div>
       <GlobalStyles />
@@ -14,15 +27,28 @@ const App: FC = () => {
           rel="stylesheet"
         ></link>
       </Helmet>
+      <Scroll className="progress-bar" style={{ scaleX }} />
       <Router>
         <Navbar />
         <Routes>
-          <Route path='/' element={<Home />}/>
-          <Route path='/cart'/>
+          <Route path="/" element={<Home />} />
+          <Route path="/cart" />
         </Routes>
+      <Footer />
       </Router>
     </div>
   );
 };
 
 export default App;
+
+const Scroll = styled(motion.div)`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: #bb4c0d;
+  transform-origin: 0%;
+  z-index: 100;
+`;
