@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import headphones from '../../assets/image-removebg-preview.png';
 import speakers from '../../assets/image-removebg-preview(38).png';
 import earphones from '../../assets/image-removebg-preview(42).png';
+import { Link } from 'react-router-dom';
 
 function Content() {
   return (
@@ -11,27 +12,39 @@ function Content() {
         <Images src={headphones}></Images>
         <Card>
           <CardHeading>headphones</CardHeading>
-          <ForShop>
-            shop <CaretRight size={14} style={{ color: '#D87D4A' }} />
-          </ForShop>
+          <Link to="/items/headphones">
+            <ForShop>
+              <Span>shop</Span>
+              <CaretRight size={14} style={{ color: '#D87D4A' }} />
+            </ForShop>
+          </Link>
         </Card>
       </CardContainer>
       <CardContainer>
         <Images src={speakers}></Images>
         <Card>
           <CardHeading>speakers</CardHeading>
-          <ForShop>
-            shop <CaretRight size={14} style={{ color: '#D87D4A' }} />
-          </ForShop>
+          <Link to="/items/speakers">
+            <ForShop>
+              <Span>shop</Span>
+              <CaretRight size={14} style={{ color: '#D87D4A' }} />
+            </ForShop>
+          </Link>
         </Card>
       </CardContainer>
       <CardContainer>
-        <Images src={earphones} style={{width: '99px', height: '99px'}}></Images>
+        <Images
+          src={earphones}
+          style={{ width: '99px', height: '99px' }}
+        ></Images>
         <Card>
           <CardHeading>earphones</CardHeading>
-          <ForShop>
-            shop <CaretRight size={14} style={{ color: '#D87D4A' }} />
-          </ForShop>
+          <Link to="/items/earphones">
+            <ForShop>
+              <Span>shop</Span>
+              <CaretRight size={14} style={{ color: '#D87D4A' }} />
+            </ForShop>
+          </Link>
         </Card>
       </CardContainer>
     </Container>
@@ -82,11 +95,14 @@ const CardHeading = styled.h1`
 `;
 
 const ForShop = styled.div`
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+`;
+
+const Span = styled.span`
   color: gray;
   text-transform: uppercase;
   font-size: 13px;
-  align-items: center;
-  display: flex;
-  gap: 6px;
-  margin-top: 12px;
+  line-height: 23px;
 `;
