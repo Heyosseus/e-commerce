@@ -25,7 +25,8 @@ const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 24px;
-  background-color: #191919;
+  background-color: black;
+  opacity: 0.92;
   height: 89px;
 
 `;
