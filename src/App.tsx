@@ -11,6 +11,10 @@ import Navbar from './components/Navbar';
 import Home from './pages/home/Home';
 import Footer from './components/Footer';
 import styled from 'styled-components';
+import ShopItems from './pages/shop/ShopItems';
+import AudioInfo from './pages/home/AudioInfo';
+import Items from './pages/home/Items';
+import Content from './pages/home/Content';
 const App: FC = () => {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
@@ -32,9 +36,12 @@ const App: FC = () => {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/items/:id" element={<ShopItems />} />
           <Route path="/cart" />
         </Routes>
-      <Footer />
+        <Content />
+        <AudioInfo />
+        <Footer />
       </Router>
     </div>
   );
